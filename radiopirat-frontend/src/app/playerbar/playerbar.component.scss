@@ -1,0 +1,60 @@
+.player-card {
+
+  width: calc(100% - 30px);
+  height: 50px;
+
+  position: fixed;
+  z-index: 14;
+
+  margin: 25px 15px 0 15px;
+  padding: 0;
+  border-radius: 16px;
+}
+
+
+.player-card-title {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+
+  margin-top: 6px;
+  margin-left: 20px;
+
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.player-card-subtitle {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+
+  margin-left: 20px;
+
+  font-weight: 200;
+  font-size: 11px;
+}
+
+button {
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+}
+
+.player-card-play-button {
+  right: 5px;
+}
+
+.player-card-volume-button {
+  right: 35px;
+}
+
+img {
+  max-height: 50px;
+  border-radius: 16px 0 0 16px;
+  padding: 0;
+}
+
+.spacer {
+  height: 105px;
+}
