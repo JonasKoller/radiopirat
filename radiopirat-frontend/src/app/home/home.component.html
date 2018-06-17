@@ -4,11 +4,8 @@
   (mutedChanged)="changeIsMuted($event)">
 </app-playerbar>
 
-<mat-card class="radiocard" *ngFor="let radio of radios" (click)="changeCurrent(radio)">
-  <p>{{ radio.title }}</p>
-
-  <button mat-icon-button class="radiocard-like-button" (click)="changeLikeStatus(radio, $event)">
-    <mat-icon *ngIf="!radio.like">favorite_border</mat-icon>
-    <mat-icon *ngIf="radio.like">favorite</mat-icon>
-  </button>
-</mat-card>
+<app-mobile-radiostation-card
+  *ngFor="let radio of radios"
+  (currentStationChanged)="changeCurrent($event)"
+  [radiostation]="radio">
+</app-mobile-radiostation-card>

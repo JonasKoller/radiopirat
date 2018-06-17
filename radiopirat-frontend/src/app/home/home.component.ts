@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Radiostation} from "../interfaces/radiostation.model";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-home',
@@ -31,20 +32,18 @@ export class HomeComponent implements OnInit {
 
   private audio = new Audio();
 
+  constructor(private title: Title) {}
+
   ngOnInit() {
     this.audio.volume = 1;
     this.audio.autoplay = true;
     this.changeCurrent(this.radios[0]);
   }
 
-  changeLikeStatus(radio, event) {
-    radio.like = !radio.like;
-    event.stopPropagation();
-  }
-
   changeCurrent(radio) {
     this.currentStation = radio;
     this.audio.src = radio.url;
+    this.title.setTitle('Radiopirat - ' + this.currentStation.title);
     this.audio.play();
   }
 

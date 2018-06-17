@@ -14,12 +14,14 @@ import {
 } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { PlayerbarComponent } from './playerbar/playerbar.component';
+import { MobileRadiostationCardComponent } from './mobile-radiostation-card/mobile-radiostation-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PlayerbarComponent,
+    MobileRadiostationCardComponent,
   ],
   imports: [
     BrowserModule,
