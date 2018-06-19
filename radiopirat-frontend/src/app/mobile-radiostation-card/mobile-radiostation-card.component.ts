@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Radiostation} from "../interfaces/radiostation.model";
+import {Radiostation} from "../../models/radiostation.model";
 
 @Component({
   selector: 'app-mobile-radiostation-card',
@@ -7,6 +7,8 @@ import {Radiostation} from "../interfaces/radiostation.model";
   styleUrls: ['./mobile-radiostation-card.component.scss']
 })
 export class MobileRadiostationCardComponent {
+
+  constructor() {}
 
   @Input() public radiostation: Radiostation;
 

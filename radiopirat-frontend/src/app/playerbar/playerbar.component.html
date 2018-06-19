@@ -6,13 +6,13 @@
   <p class="player-card-subtitle">{{ currentRadiostation?.subtitle }}</p>
 
   <button mat-icon-button class="player-card-play-button" (click)="clickPlayButton()">
-    <mat-icon *ngIf="isPlaying">pause</mat-icon>
-    <mat-icon *ngIf="!isPlaying">play_arrow</mat-icon>
+    <mat-icon *ngIf="playing">pause</mat-icon>
+    <mat-icon *ngIf="!playing">play_arrow</mat-icon>
   </button>
 
   <button mat-icon-button class="player-card-volume-button" (click)="clickMuteButton()">
-    <mat-icon *ngIf="isMuted">volume_off</mat-icon>
-    <mat-icon *ngIf="!isMuted">volume_up</mat-icon>
+    <mat-icon *ngIf="muted">volume_off</mat-icon>
+    <mat-icon *ngIf="!muted">volume_up</mat-icon>
   </button>
 
 </mat-card>

@@ -1,11 +1,11 @@
 <app-playerbar
   [currentRadiostation]="currentStation"
-  (playingChanged)="changeIsPlaying($event)"
-  (mutedChanged)="changeIsMuted($event)">
+  [(playing)]="playing"
+  [(muted)]="muted">
 </app-playerbar>
 
 <app-mobile-radiostation-card
   *ngFor="let radio of radios"
-  (currentStationChanged)="changeCurrent($event)"
+  (currentStationChanged)="playStation($event)"
   [radiostation]="radio">
 </app-mobile-radiostation-card>

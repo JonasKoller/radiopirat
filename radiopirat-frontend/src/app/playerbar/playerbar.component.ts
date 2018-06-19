@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Radiostation} from "../interfaces/radiostation.model";
+import {Radiostation} from "../../models/radiostation.model";
 
 @Component({
   selector: 'app-playerbar',
@@ -10,20 +10,20 @@ export class PlayerbarComponent {
 
   @Input() public currentRadiostation: Radiostation;
 
-  @Output() public playingChanged = new EventEmitter<boolean>();
-  @Output() public mutedChanged = new EventEmitter<boolean>();
+  @Input() public playing: boolean;
+  @Output() private playingChange = new EventEmitter<boolean>();
 
-  public isPlaying = true;
-  public isMuted = false;
+  @Input() public muted: boolean;
+  @Output() private mutedChange = new EventEmitter<boolean>();
 
   clickPlayButton() {
-    this.isPlaying = !this.isPlaying;
-    this.playingChanged.emit(this.isPlaying);
+    this.playing = !this.playing;
+    this.playingChange.emit(this.playing);
   }
 
   clickMuteButton() {
-    this.isMuted = !this.isMuted;
-    this.mutedChanged.emit(this.isMuted);
+    this.muted = !this.muted;
+    this.mutedChange.emit(this.muted);
   }
 
 }
