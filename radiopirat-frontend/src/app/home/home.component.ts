@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   public radios: Radiostation[] = RADIO_STATIONS;
 
   public currentStation: Radiostation;
-  private isPlaying = true;
+  private isPlaying = false;
   private isMuted = false;
 
   private audio = new Audio();
@@ -41,8 +41,10 @@ export class HomeComponent implements OnInit {
 
     if (station) {
       this.playStation(station);
+      this.playing = false;
     } else {
       this.playStation(this.radios[0]);
+      this.playing = false;
     }
   }
 
