@@ -1,17 +1,12 @@
-<app-playerbar
-  [currentRadiostation]="currentStation"
-  [(playing)]="playing"
-  [(muted)]="muted">
-</app-playerbar>
+<app-play-bar></app-play-bar>
 
 <div>
-
   <app-mobile-radiostation-card
-    *ngFor="let radio of radios"
-    (currentStationChanged)="playStation($event)"
-    [radiostation]="radio">
+    *ngFor="let radio of radioStations$ | async"
+    (likeClick)="changeLike(radio)"
+    (cardClick)="playStation(radio)"
+    [radioStation]="radio">
   </app-mobile-radiostation-card>
 
-    <p>Hier sind die AGBS</p>
-
+  <p>Hier sind die AGBS</p>
 </div>

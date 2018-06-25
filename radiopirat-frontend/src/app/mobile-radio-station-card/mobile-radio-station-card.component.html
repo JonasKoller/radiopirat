@@ -1,0 +1,8 @@
+<mat-card class="radiocard" (click)="onCardClick($event)">
+  <p>{{ radioStation?.title }}</p>
+
+  <button mat-icon-button class="radiocard-like-button" (click)="onLikeClick($event)">
+    <mat-icon *ngIf="!radioStation?.like">favorite_border</mat-icon>
+    <mat-icon *ngIf="radioStation?.like">favorite</mat-icon>
+  </button>
+</mat-card>

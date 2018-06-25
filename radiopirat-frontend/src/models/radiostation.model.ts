@@ -1,4 +1,4 @@
-export interface Radiostation {
+export interface RadioStation {
   id: number;
   title: string;
   subtitle: string;

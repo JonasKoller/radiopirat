@@ -1,6 +1,6 @@
-import {Radiostation} from "../models/radiostation.model";
+import {RadioStation} from "../models/radiostation.model";
 
-export const RADIO_STATIONS: Radiostation[] = [
+export const RADIO_STATIONS: RadioStation[] = [
   { id: 0, title: 'Radio SRF 3', subtitle: 'srf.ch/radio-srf-3', url: 'http://stream.srg-ssr.ch/m/drs3/mp3_128', like: false },
   { id: 1, title: 'Energy Zürich', subtitle: 'energy.ch', url: 'http://energyzuerich.ice.infomaniak.ch/energyzuerich-high.mp3', like: false },
   { id: 2, title: 'RTS Couleur 3', subtitle: 'rts.ch', url: 'http://stream.srg-ssr.ch/m/couleur3/aacp_96', like: false },
