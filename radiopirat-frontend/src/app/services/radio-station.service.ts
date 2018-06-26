@@ -30,6 +30,8 @@ export class RadioStationService {
       radioStations.push({...radioStation, like: this.isStationLiked(radioStation.id)});
     }
 
+    radioStations.sort((x, y) => (x.like === y.like) ? 0 : x.like ? -1 : 1);
+
     this.radioStations$ = new BehaviorSubject<RadioStation[]>(radioStations);
 
     const lastPlayingRadioStationId = this.getLastPlayingId();
@@ -89,7 +91,7 @@ export class RadioStationService {
 
     this.audio.src = radioStation.url;
     this.title.setTitle('Radiopirat - ' + radioStation.title);
-    this.localStorageService.set("CURRENT_STATION_ID", stationId);
+    this.localStorageService.set('CURRENT_STATION_ID', stationId);
 
     this.currentRadioStation$.next(radioStation);
     this.setPlaying(true);
@@ -99,7 +101,7 @@ export class RadioStationService {
     if (newVal) {
       this.audio.src = this.currentRadioStation$.getValue().url;
     } else {
-      this.audio.src = "";
+      this.audio.src = '';
       this.audio.pause();
     }
 
