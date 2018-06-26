@@ -15,6 +15,7 @@ import {
 import { HomeComponent } from './home/home.component';
 import { PlayBarComponent } from './play-bar/play-bar.component';
 import { MobileRadioStationCardComponent } from './mobile-radio-station-card/mobile-radio-station-card.component';
+import { PrivacyPageComponent } from './privacy-page/privacy-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MobileRadioStationCardComponent } from './mobile-radio-station-card/mob
     HomeComponent,
     PlayBarComponent,
     MobileRadioStationCardComponent,
+    PrivacyPageComponent,
   ],
   imports: [
     BrowserModule,
