@@ -1,7 +1,7 @@
-<mat-card class="radiocard" (click)="onCardClick($event)">
+<mat-card class="radiocard" (click)="onCardClick($event)" role="button" [attr.aria-label]="radioStation?.title">
   <p>{{ radioStation?.title }}</p>
 
-  <button mat-icon-button class="radiocard-like-button" (click)="onLikeClick($event)">
+  <button mat-icon-button class="radiocard-like-button" (click)="onLikeClick($event)" [attr.aria-label]="radioStation?.title + (radioStation?.like ? ' entfavorisieren' : ' favorisieren')">
     <mat-icon *ngIf="!radioStation?.like">favorite_border</mat-icon>
     <mat-icon *ngIf="radioStation?.like">favorite</mat-icon>
   </button>

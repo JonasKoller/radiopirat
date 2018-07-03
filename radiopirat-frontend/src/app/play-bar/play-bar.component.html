@@ -5,12 +5,12 @@
   <p class="player-card-title">{{ (currentRadioStation$ | async)?.title }}</p>
   <p class="player-card-subtitle">{{ (currentRadioStation$ | async)?.subtitle }}</p>
 
-  <button mat-icon-button class="player-card-play-button" (click)="clickPlayButton()">
+  <button mat-icon-button class="player-card-play-button" (click)="clickPlayButton()" [attr.aria-label]="(playing$ | async) ? 'Pausieren' : 'Abspielen'">
     <mat-icon *ngIf="playing$ | async">pause</mat-icon>
     <mat-icon *ngIf="!(playing$ | async)">play_arrow</mat-icon>
   </button>
 
-  <button mat-icon-button class="player-card-volume-button" (click)="clickMuteButton()">
+  <button mat-icon-button class="player-card-volume-button" (click)="clickMuteButton()" [attr.aria-label]="(mute$ | async) ? 'Ton einschalten' : 'Stummschalten'">
     <mat-icon *ngIf="mute$ | async">volume_off</mat-icon>
     <mat-icon *ngIf="!(mute$ | async)">volume_up</mat-icon>
   </button>
