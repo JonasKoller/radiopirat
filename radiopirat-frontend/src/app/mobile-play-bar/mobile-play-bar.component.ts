@@ -4,11 +4,11 @@ import {RadioStationService} from '../services/radio-station.service';
 import {BehaviorSubject} from 'rxjs';
 
 @Component({
-  selector: 'app-play-bar',
-  templateUrl: './play-bar.component.html',
-  styleUrls: ['./play-bar.component.scss']
+  selector: 'app-mobile-play-bar',
+  templateUrl: './mobile-play-bar.component.html',
+  styleUrls: ['./mobile-play-bar.component.scss']
 })
-export class PlayBarComponent {
+export class MobilePlayBarComponent {
 
   currentRadioStation$: BehaviorSubject<RadioStation>;
   playing$: BehaviorSubject<boolean>;

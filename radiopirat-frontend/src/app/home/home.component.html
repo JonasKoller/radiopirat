@@ -1,4 +1,4 @@
-<app-play-bar></app-play-bar>
+<app-mobile-play-bar></app-mobile-play-bar>
 
 <div>
   <app-mobile-radiostation-card
@@ -10,3 +10,5 @@
 
   <p class="privacyLinks" [routerLink]="'/privacy'">Datenschutzerklärung und Nutzungsbestimmungen</p>
 </div>
+
+<app-mobile-no-internet-footer *ngIf="!(online | async)"></app-mobile-no-internet-footer>

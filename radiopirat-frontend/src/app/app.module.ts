@@ -13,17 +13,21 @@ import {
   MatSliderModule
 } from '@angular/material';
 import { HomeComponent } from './home/home.component';
-import { PlayBarComponent } from './play-bar/play-bar.component';
+import { MobilePlayBarComponent } from './mobile-play-bar/mobile-play-bar.component';
 import { MobileRadioStationCardComponent } from './mobile-radio-station-card/mobile-radio-station-card.component';
 import { PrivacyPageComponent } from './privacy-page/privacy-page.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { MobileNoInternetFooterComponent } from './mobile-no-internet-footer/mobile-no-internet-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PlayBarComponent,
+    MobilePlayBarComponent,
     MobileRadioStationCardComponent,
     PrivacyPageComponent,
+    MobileNoInternetFooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,7 @@ import { PrivacyPageComponent } from './privacy-page/privacy-page.component';
     MatIconModule,
     MatButtonModule,
     MatSliderModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
